@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller="loginController">
+
+    <form ng-submit="login({'uname':uname,'upwd':upwd})">
+        <label>Uname.</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <input type="text" name="uname" ng-model="uname">
+        <br><br>
+        <label>Upwd.</label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <input type="password" name="upwd" ng-model="upwd">
+        <br><br>
+        <input type="submit">
+    </form>
+    <h1>{{result}}</h1>
+
+
+
+    <!-- Load Angular Framework-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+    <script>
+        var app = angular.module("app",[]);
+
+        app.service("loginService",function($http){
+            this.authenticate = function(obj){
+                return $http.post("http://localhost:8080/login",obj)
+                            .then(function(posRes){ return posRes; },
+                                  function(errRes){ return errRes; });
+            };
+        });
+
+        app.controller("loginController",function($scope,loginService){
+            $scope.login = function(obj){
+                loginService.authenticate(obj).then(function(res){
+                    $scope.result = res;
+                });
+            };
+        });
+    </script>
+</html>

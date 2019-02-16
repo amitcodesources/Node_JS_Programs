@@ -1,0 +1,5 @@
+create table login_details(uname varchar(20), upwd varchar(20));
+
+insert into login_details values("admin", "admin");
+
+select * from login_details;

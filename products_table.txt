@@ -1,0 +1,5 @@
+create table products(p_id integer, p_name varchar(20), p_cost integer);
+
+insert into products values(111, 'p_one', 10000);
+
+select * from products;

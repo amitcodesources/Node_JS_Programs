@@ -1,0 +1,208 @@
+Introduction to Node Js:-
+==================
+=>Node js is the server side scripting language. 
+=>Node js is used to build the servers. By using node js we can build HTTP and TCP servers.
+=>We can build the node applications by using java script.
+=>Java script is mono threaded i.e  single threaded. so node applications also mono threaded application.
+=>Node supports the modules (pre defined modules & custom modules).
+=>Node means pre defined library.
+
+Modules in Node Js:-
+================
+1.Http module:-
+-------------------
+ 	Http module is the pre defined module . Http module also called as native module. Http module is used to 
+devlope Http server. Http module avilable along with the node engine.
+
+2.Url module:-
+..........................
+=>url module is the pre defined module
+=>url module also available along with the Node engine.
+=>url module is used to read the get parameters in Http servers.
+
+3.Query string module:-
+-----------------------------
+=>it is also native module.
+=>it is used to read the post parameter in http servers.
+
+4. fs module:-
+-----------------
+=> 'fs' stands for "file system".
+=>it is also native module.
+=>'fs' module is used to perform the operations on flat files.
+Ex:- reading the data from flat files.
+       writing the data to the flat files.
+       creating the data from flat files.
+
+5.Express module:-
+------------------------
+=>Express module is the third party module.		npm install express --save
+=>it is used to devlope the web services (Rest API).
+=>providing the communiction b/w different technologies called as web services.
+
+6.MS sql module:-
+...............................
+=>MS sql module also third party module.
+=>MS sql module used to interact with the mysql database.
+
+7.Mongo db module:-
+--------------------------
+=> Mongo db module used to interact with Mongo db database.
+=>The stable version of Mongo db is 2.2.32.
+=>it is also third party module.
+
+8.MySql :-
+=======
+=>MySql module also third party module.
+=>MySql module used to interact with the Sql Server.
+
+9.Body-Parsar module:-
+==================
+=>Body-Parsar module is the third party module.
+=>It is used to set the MIME type.
+Ex:- xml,Json, text...
+=>It is also used to read the post parameters in Express Js.
+
+10.Jwt- simple module:-
+==================
+=>Jwt- simple module is used to generate the tokens.
+=>Jwt- simple module generated tokens we will use for authentication purpose.
+=>Jwt- simple module authentication called as "token based authentication system".
+
+11.Multer module:-
+==============
+=>Multer module also third party module.
+=>Multer module is used to upload the images to the server.
+
+12.Socket.IO module:-
+=================
+=>It is also third party module.
+=>This module used to implement the chat applications.
+
+13.Mangoose:-
+===========
+=>Mangoose module is the 3rd party module.
+=>Mangoose module is used to interact with the mongodb with schema.
+=>Schema maens rules and regulations.
+
+14.Cookie-parser module:-
+====================
+=>It is used to implement the cookies in node application.
+=>In general we will use cookies for Session management.
+=>It is also third party module.
+=>In cookies we can store maximum 4mb data.
+=>Cookies are in key & value pairs.
+=>Cookies are not secured.
+
+15. Cluster:-
+==========
+=>Cluster module is used to implement the load balancing in node Server.
+
+16.Express cluster:-
+------------------------
+=>This module is used to implement the load balancing in Rest Services.
+
+Note:-
+=====
+1.No need to download the pre-defined modules.
+2.Pre-defined modules avaliable along with the Node Software.
+3.We must download third party modules.
+4.Third party modules will be downloads  to "node-modules" folder in current path.
+5.We will download third party modules with the help of "yarn'' packaging manager.
+6. "yarn" is the packaging manager used to download the node modules in a faster manner.
+
+
+
+
+Creating Http Server:-
+================
+
+Create folder - CreatingHttpServer - 
+Inside this folder create a file -  server.js
+Write below code inside server.js file
+
+
+	//import http module
+//http module is the predefined module
+//http module is used to create http server
+//no need to download http module
+//http module is available along with the node engine
+//http module is called native module
+//require() is the predefined function in node JS
+//require() used to import the modules
+var http = require("http");
+//create the http server
+//createServer() is the predefined function used to create http server
+var server = http.createServer((req, res)=>{
+    //set the MIME Type
+    //writeHead(_,_) is the predefined function in res object to the MIME Type
+    res.writeHead(200, {'Content-Type':'text/html'});
+    //send the response to client
+    //write() is the predefined function used to send the response to the client
+    res.write("<h1 style='color:red'>Welcome to First Http Server...</h1>");
+    //lock the res object 
+    //end() is the predefined function to lock the res object
+    res.end();
+});
+//assign the port no to http server 
+server.listen(8080);
+console.log("Server listening the port no 8080");
+
+
+To run this open terminal
+write command - 	node server.js
+To see the output open browser
+write in address bar -		http://localhost:8080/
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
